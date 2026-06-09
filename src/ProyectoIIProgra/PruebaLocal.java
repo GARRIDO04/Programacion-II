@@ -1,7 +1,7 @@
 package ProyectoIIProgra;
 
 public class PruebaLocal {
-    public static void PruebaLocal(String[] args) {
+    public static void main(String[] args) {
         ComponenteDAO dao = new ComponenteDAO();
 
         dao.listarComponentes();

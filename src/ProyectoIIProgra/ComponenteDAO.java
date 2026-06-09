@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class ComponenteDAO {
 
-    // CREATE: Agrega un nuevo componente al inventario
+// CREATE: Agrega un nuevo componente al inventario
     public boolean agregarComponente(String nombre, String tipo, int stock, int stockMinimo) {
         String sql = "INSERT INTO Componentes (nombre, tipo, stock, stock_minimo) VALUES (?, ?, ?, ?)";
         try (Connection con = Conexion.getConexion();
@@ -20,7 +20,7 @@ public class ComponenteDAO {
         }
     }
 
-    // READ: Lee todos los componentes (Ideal para llenar un JTable)
+// READ: Lee todos los componentes (Ideal para llenar un JTable)
     public void listarComponentes() {
         String sql = "SELECT * FROM Componentes";
         try (Connection con = Conexion.getConexion();
@@ -37,7 +37,7 @@ public class ComponenteDAO {
         }
     }
 
-    // USO DEL PROCEDIMIENTO ALMACENADO Y TRIGGERS
+// USO DEL PROCEDIMIENTO ALMACENADO Y TRIGGERS
     public void registrarUso(int idProyecto, int idComponente, int cantidad) {
         String sql = "{CALL sp_RegistrarUso(?, ?, ?)}"; // Llamada al procedimiento
         try (Connection con = Conexion.getConexion();
@@ -53,7 +53,7 @@ public class ComponenteDAO {
         }
     }
     
-    // UPDATE y DELETE (Implementaciones básicas del CRUD)
+// UPDATE y DELETE (Implementaciones básicas del CRUD)
     public boolean eliminarComponente(int id) {
         String sql = "DELETE FROM Componentes WHERE id = ?";
         try (Connection con = Conexion.getConexion();
